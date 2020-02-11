@@ -52,7 +52,53 @@ import ReactDOM from 'react-dom';
 //const myelement = <input type="text">
 
 //it's mus be like this: 
-const myelement = <input type="text"/>
+// const myelement = <input type="text"/>
+
+// function Car(){
+//     return <h2>Hi, I am also a Car!</h2>
+// }
+
+// class Car extends React.Component{
+//     constructor(){
+//         super();
+//         this.state = {color: "red"};
+//     }
+
+//     render(){
+//     return <h2>I am a {this.state.color} Car!</h2>
+//     }
+// }
+
+// class Car extends React.Component{
+//     render() {
+//         return <h2>I am a {this.props.color} Car!</h2>
+//     }
+// }
+
+// class Car extends React.Component{
+//     render() {
+//         return <h2>I am a Car!</h2>
+//     }
+// }
+
+// class Garage extends React.Component {
+//     render(){
+//         return (
+//             <div>
+//                 <h1>Who lives in my Garage?</h1>
+//                 <Car />
+//             </div>
+//         );
+//     }
+// }
+
+class Car extends React.Component{
+    render(){
+        return <h2>I am a {this.props.brand}!</h2>
+    }
+}
+
+const myelement = <Car brand="Ford" />
 
 ReactDOM.render(myelement, document.getElementById('root'));
 

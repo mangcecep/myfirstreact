@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 //import './index.css';
-import App from './App.css';
+//import App from './App.css';
+import Card from './components/components/Card';
 // import * as serviceWorker from './serviceWorker';
 
 // const mysFirstElemennt = <h1>Hello React!</h1>
@@ -264,32 +265,229 @@ import App from './App.css';
 //     }
 // }
 
-class Card extends React.Component {
-    state = {
-        list: [1,2,3,4,5]
+// class Header extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {favoritecolor: "red"};
+//     }
+
+//     static getDerivedStateFromProps(props, state){
+//         return {favoritecolor: props.favcol};
+//     }
+
+//     render(){
+//         return (
+//             <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+//         );
+//     }
+// }
+
+// class Header extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {favoritecolor: "red"};
+//     }
+
+//     componentDidMount(){
+//         setTimeout( () => {
+//             this.setState({favoritecolor: "yellow"})
+//         }, 1000 )
+//     }
+
+//     render(){
+//         return (
+//             <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+//         );
+//     }
+// }
+
+// class  MyForm extends React.Component {
+//     render() {
+//         return (
+//             <form>
+//                 <h1>Hello</h1>
+//                 <p>Enter Your Name : </p>
+//                 <input 
+//                     type="text"
+//                 />
+//             </form>
+//         );
+//     }
+// }
+
+// class MyForm extends React.Component {
+//     constructor(props) {
+//             super(props) ;
+//             this.state =  {username: ''};
+//         }
+
+//         myChangeHandler = (event) => {
+//             this.setState({username: event.target.value});
+//         }
+
+//         render(){
+//             return(
+//                 <form>
+//                     <h1>Hello {this.state.username}</h1>
+//                     <p>Enter your name :</p>
+
+//                     <input 
+//                         type='tect'
+//                         onChange={this.myChangeHandler}
+//                     />
+//                 </form>
+//             );
+        
+//          }
+//     }
+
+// class Myform extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = { username : ''};
+//     }
+
+//     myChangeHandler = (event) => {
+//         this.setState({username: event.target.value});
+//     }
+
+//     render() {
+//         let header = '';
+//         if(this.state.username){
+//             header = <h1>Hello {this.state.username}</h1>;
+//         } else {
+//             header = '';
+//         }
+
+//         return (
+//             <form>
+//                 {header}
+//                 <p>Enter your name :</p>
+//                 <input
+//                     type='text'
+//                     onChange={this.myChangeHandler}
+//                 />
+//             </form>
+//         );
+//     }
+// }
+
+// class MyForm extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = { username: '' };
+//     }
+
+//     mySubmitHandler = (event) => {
+//         event.preventDefault();
+//         alert("You are submitting " + this.state.username);
+//     }
+
+//     myChangeHandler = (event) => {
+//         this.setState({username: event.target.value});
+//     }
+
+//     render(){
+//         return (
+//             <form onSubmit={this.mySubmitHandler}>
+//                 <h1>Hello {this.state.username}</h1>
+//                 <p>Enter your name, and submit:</p>
+
+//                 <input
+//                     type='text'
+//                     onChange={this.myChangeHandler}
+//                 />
+
+//                 <input
+//                     type='submit'
+//                 />
+//             </form>
+//         );
+//     }
+// }
+
+// class MyForm extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             username: '',
+//             age: null,
+//         };
+//     }
+
+//     myChangeHandler = (event) => {
+//         let nam = event.target.name;
+//         let val = event.target.value;
+//         this.setState({[nam] : val});
+//     }
+
+//     render(){
+//         return (
+//             <form>
+//                 <h1>Hello {this.state.username} {this.state.age}</h1>
+//                 <p>Enter your Name: </p>
+
+//                 <input
+//                     type='tect'
+//                     name='username'
+//                     onChange={this.myChangeHandler}
+//                 />
+//                 <p>Enter your age : </p>
+//                 <input
+//                     type='text'
+//                     name='age'
+//                     onChange={this.myChangeHandler}
+//                 />
+//             </form>
+//         );
+//     }
+// }
+
+class MyForm extends React.Component {
+    constructor(props) {
+        super(props) ;
+            this.state = {
+                username: '',
+                age: null,
+            };
+        }
+
+        myChangeHandler = (event) => {
+            let nam = event.target.name;
+            let val = event.target.value;
+            if(nam === "age") {
+                if (!Number(val)) {
+                    alert("Your age must be a number");
+                }
+            }
+            this.setState({[nam] : val})
+        }
+
+        render() {
+            return (
+                <form>
+                    <h1>Hello {this.state.username} {this.state.age}</h1>
+                    <p>Enter your name:</p>
+                    <input
+                        type = 'text'
+                        name = 'username'
+                        onChange={this.myChangeHandler}
+                    />
+                    <p>Enter your age:</p>
+                    <input
+                        type='text'
+                        name = 'age'
+                        onChange={this.myChangeHandler}
+                    />
+                </form>
+            );
+        }
+
     }
-    render(){
-        return(
-            <Fragment>
-            {this.state.list.map((_, index) => (
-                <div key={index} className="card">
-                    <img src="https://www.bni.co.id/Portals/1/bni-logo-id.svg?ver=2017-04-27-170938-000" />
 
-                    <h3 className="nameUser">PT.Bank Negara Indonesia (Pesero) Tbk.<span className="span"> @BNI.Jul 4, 2019 </span> </h3>
 
-                    <p> Tujuan hidup setiap orang berbeda, lakukan yang terbaik bagimu dan <br />orang lain.<span className="spanp">#BNIQuotes #BersamaJadiLuarBiasa</span></p>
-
-                    <div className="image">
-                        <img src="https://pbs.twimg.com/media/D-dyqwkVAAAzoAV?format=jpg&name=medium" alt="image tweet" width="100%" height="100px" />
-                    </div>
-                </div>
-            ))}
-            </Fragment>
-        );  
-    }
-}
-
-ReactDOM.render(<Card />, document.getElementById('root'));
+ReactDOM.render(<MyForm />, document.getElementById('root'));
+// ReactDOM.render(<Card />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

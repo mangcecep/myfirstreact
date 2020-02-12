@@ -38,9 +38,51 @@
 }
 
 body {
-  background-color: #282c34;
-  color: white;
+  
+  color:black;
   padding : 40px;
   font-family: Arial;
-  text-align: center;
+  text-align: left;
+}
+
+.card{
+  border-style: outset;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+
+  border-radius: 10px;
+}
+
+.card img {
+  margin-left: 20px;
+  width : 100px ;
+  height : 50px;
+  border-radius: 25px;
+}
+
+.nameUser {
+  margin-left: 200px;
+  margin-top: -50px;
+}
+
+.card p {
+  margin-top: -10px;
+  margin-left: 200px;
+}
+
+.card h3 span{
+  color: grey;
+
+}
+
+.spanp{
+  color: aqua;
+}
+
+.card .image img{
+  margin-left: 200px;
+  width: 100%;
+  max-width: 550px;
+  height: auto;
 }

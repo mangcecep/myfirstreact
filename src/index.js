@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
-//import App from './App.js';
+//import './index.css';
+import App from './App.css';
 // import * as serviceWorker from './serviceWorker';
 
 // const mysFirstElemennt = <h1>Hello React!</h1>
@@ -232,39 +232,64 @@ import ReactDOM from 'react-dom';
 //     }
 // }
 
-class Car extends React.Component {
-    constructor (props) {
-        super (props);
-        this.state = {
-            brand : "Ford",
-            model : "Mustang",
-            color : "red",
-            year : 1964
-        };
-    }
+// class Car extends React.Component {
+//     constructor (props) {
+//         super (props);
+//         this.state = {
+//             brand : "Ford",
+//             model : "Mustang",
+//             color : "red",
+//             year : 1964
+//         };
+//     }
 
-    changeColor = () => {
-        this.setState({color: "blue"});
-    }
+//     changeColor = () => {
+//         this.setState({color: "blue"});
+//     }
 
+//     render(){
+//     return (
+//         <div>
+//             <h1>My {this.state.brand}</h1>
+//             <p>
+//                 it is a {this.state.color} <br />
+//                 {this.state.model} <br />
+//                 from {this.state.year}.
+//             </p>
+//             <button type="button" onClick={this.changeColor}>
+//                 Change Color
+//             </button>
+//         </div>
+//         );
+//     }
+// }
+
+class Card extends React.Component {
+    state = {
+        list: [1,2,3,4,5]
+    }
     render(){
-    return (
-        <div>
-            <h1>My {this.state.brand}</h1>
-            <p>
-                it is a {this.state.color} <br />
-                {this.state.model} <br />
-                from {this.state.year}.
-            </p>
-            <button type="button" onClick={this.changeColor}>
-                Change Color
-            </button>
-        </div>
-        );
+        return(
+            <Fragment>
+            {this.state.list.map((_, index) => (
+                <div key={index} className="card">
+                    <img src="https://www.bni.co.id/Portals/1/bni-logo-id.svg?ver=2017-04-27-170938-000" />
+
+                    <h3 className="nameUser">PT.Bank Negara Indonesia (Pesero) Tbk.<span className="span"> @BNI.Jul 4, 2019 </span> </h3>
+
+                    <p> Tujuan hidup setiap orang berbeda, lakukan yang terbaik bagimu dan <br />orang lain.<span className="spanp">#BNIQuotes #BersamaJadiLuarBiasa</span></p>
+
+                    <div className="image">
+                        <img src="https://pbs.twimg.com/media/D-dyqwkVAAAzoAV?format=jpg&name=medium" alt="image tweet" width="100%" height="100px" />
+                    </div>
+                </div>
+            ))}
+            </Fragment>
+        );  
     }
 }
 
-ReactDOM.render(<Car />, document.getElementById('root'));
+ReactDOM.render(<Card />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

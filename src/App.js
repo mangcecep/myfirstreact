@@ -1,13 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './mystyle.module.css';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello World!</h1>
-    </div>
-  );
+class Car extends React.Component {
+  render(){
+    return <h1>Hello Car!</h1>;
+  }
 }
 
-export default App;
+export default Car;

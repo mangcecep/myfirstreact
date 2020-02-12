@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import './index.css';
-// import App from './App';
+//import App from './App.js';
 // import * as serviceWorker from './serviceWorker';
 
 // const mysFirstElemennt = <h1>Hello React!</h1>
@@ -92,15 +92,179 @@ import ReactDOM from 'react-dom';
 //     }
 // }
 
-class Car extends React.Component{
+// class Car extends React.Component{
+//     render(){
+//         return <h2>I am a {this.props.brand}!</h2>
+//     }
+// }
+
+// const myelement = <Car brand="Ford" />
+
+// class Card extends React.Component{
+//     render(){
+//         return <h1>ini Card</h1>
+//     }
+// }
+
+// class Myheader extends React.Component {
+//     render(){
+//         return (
+//             <div>
+//                 <h1 style={{backgroundColor: "lightblue"}}>Hello Style!</h1>
+//                 <p>add a little style!</p>
+//             </div>
+//         );
+//     }
+// }
+
+// class Myheader extends React.Component{
+//     render (){
+//     //     const mystyle = {
+//     //         color : "white",
+//     //         backgroundColor: "DodgerBlue",
+//     //         padding : "10px",
+//     //         fontFamily : "Arial"
+//     //     }
+
+//         return (
+//             <div>
+//                 <h1>Hello Style!</h1>
+//                 <p>add a little style!</p>
+//             </div>
+//         )
+//     }
+// }
+
+// class Car extends React.Component{
+//     render (){
+//         return <h2>I am a {this.props.brand}!</h2>
+//     }
+// }
+
+// const myelement = <Car brand="Ford" />
+
+// class Car extends React.Component{
+//     render (){
+//         return <h2>I am a {this.props.brand}!</h2>
+//     }
+// }
+
+// class Garage extends React.Component {
+//     render(){
+//         return(
+//             <div>
+//                 <h1>Whi lives in my garage?</h1>
+//                 <Car brand="Ford" />
+//             </div>
+//         );
+//     }
+// }
+
+// class Car extends React.Component{
+//     render (){
+//         return <h2>I am a {this.props.brand}!</h2>
+//     }
+// }
+
+// class Garage extends React.Component {
+//     render() {
+//         const carname =  "Ford";
+//         return (
+//             <div>
+//                 <h1>Who live in my garage?</h1>
+//                 <Car brand={carname} />
+//             </div>
+//         );
+//     }
+// }
+
+// class Car extends React.Component {
+//     render(){
+//         return <h2>I am a {this.props.brand.name}!</h2>
+//     }
+// }
+
+// class Garage extends React.Component {
+//     render(){
+//         const carinfo = {name : "Ford", model: "Mustang"};
+//         return(
+//             <div>
+//                 <h1>Who lives in my garage?</h1>
+//                 <Car brand={carinfo}/>
+//             </div>
+
+//         );
+//     }
+// }
+
+// class Car extends React.Component {
+//     constructor (props) {
+//         super (props);
+//     }
+
+//     render(){
+//     return <h2>I am a {this.props.model} !</h2>
+//     }
+// }
+
+// class Car extends React.Component {
+//     constructor (props) {
+//         super (props);
+//         this.state = {
+//             brand : "Ford",
+//             model : "Mustang",
+//             color : "red",
+//             year : 1964
+//         };
+//     }
+
+//     render(){
+//     return (
+//         <div>
+//             <h1>My {this.state.brand}</h1>
+//             <p>
+//                 it is a {this.state.color} <br />
+//                 {this.state.model} <br />
+//                 from {this.state.year}.
+//             </p>
+//         </div>
+//         );
+//     }
+// }
+
+class Car extends React.Component {
+    constructor (props) {
+        super (props);
+        this.state = {
+            brand : "Ford",
+            model : "Mustang",
+            color : "red",
+            year : 1964
+        };
+    }
+
+    changeColor = () => {
+        this.setState({color: "blue"});
+    }
+
     render(){
-        return <h2>I am a {this.props.brand}!</h2>
+    return (
+        <div>
+            <h1>My {this.state.brand}</h1>
+            <p>
+                it is a {this.state.color} <br />
+                {this.state.model} <br />
+                from {this.state.year}.
+            </p>
+            <button type="button" onClick={this.changeColor}>
+                Change Color
+            </button>
+        </div>
+        );
     }
 }
 
-const myelement = <Car brand="Ford" />
-
-ReactDOM.render(myelement, document.getElementById('root'));
+ReactDOM.render(<Car />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
